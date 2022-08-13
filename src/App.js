@@ -4,7 +4,7 @@ import './App.css';
 import Alert from './components/Alert'
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
-
+// import { BrowserRouter,Routes,Route } from "react-router-dom";
 
 function App() {
   const [mode, setMode] = useState('light')
@@ -34,11 +34,17 @@ function App() {
   }
   return (
  <>
+ {/* <BrowserRouter> */}
 <Navbar title="TextUtils" mode={mode} aboutText="About" toggleMode={toggleMode} />
 <Alert alert={alert}/>
 <div className="container my-3">
 <TextForm showAlert={showAlert} heading='Enter The Text Below To Convert' mode={mode}/>
+  {/* <Routes>
+    <Route path='/' element={<TextForm showAlert={showAlert} heading='Enter The Text Below To Convert' mode={mode}/>}/>
+    <Route path='/about' element={<About/>}/>
+</Routes> */}
 </div>
+{/* </BrowserRouter> */}
  </>
   );
 }
